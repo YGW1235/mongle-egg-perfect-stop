@@ -16,6 +16,23 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
    npx expo start
    ```
 
+## Rewarded ad development
+
+Google rewarded ads use native code and do not run in Expo Go. Use an Android or iOS development build:
+
+```bash
+npx expo prebuild
+npx expo run:android
+```
+
+For an EAS development build:
+
+```bash
+npx eas build --profile development --platform android
+```
+
+Development currently uses Google's official sample AdMob app IDs and `TestIds.REWARDED` only. Before a production release, replace the sample app IDs, provide platform-specific production rewarded unit IDs, and complete the required consent/privacy flow. Do not test production ad units repeatedly during development.
+
 In the output, you'll find options to open the app in a
 
 - [development build](https://docs.expo.dev/develop/development-builds/introduction/)
